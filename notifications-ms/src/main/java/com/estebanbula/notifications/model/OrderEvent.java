@@ -1,4 +1,4 @@
-package com.estebanbula.orders.model;
+package com.estebanbula.notifications.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

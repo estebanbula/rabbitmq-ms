@@ -14,6 +14,9 @@ public class OrderProducer {
 
     public void sendEvent(OrderEvent orderEvent) {
         rabbitTemplate.convertAndSend(RabbitMqConfig.TOPIC_EXCHANGE,
-                RabbitMqConfig.ROUTING_KEY_EVENTS_GENERAL, orderEvent);
+                RabbitMqConfig.ORDERS_ROUTING_KEY_EVENTS, orderEvent);
+
+        rabbitTemplate.convertAndSend(RabbitMqConfig.TOPIC_EXCHANGE,
+                RabbitMqConfig.EMAIL_ROUTING_KEY_EVENTS, orderEvent);
     }
 }

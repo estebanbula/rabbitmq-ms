@@ -1,2 +1,12 @@
 server:
   port: 8080
+
+adapters:
+  rabbitmq:
+    host: "localhost"
+    port: 5672
+    username: "guest"
+    password: "guest"
+    virtualhost: "/"
+    queue:
+      orders: "orders.events.general"

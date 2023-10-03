@@ -1,2 +1,12 @@
 server:
   port: 8081
+
+adapters:
+  rabbitmq:
+    host: "localhost"
+    port: 5672
+    username: "guest"
+    password: "guest"
+    virtualhost: "/"
+    queue:
+      email: "email.events.general"
