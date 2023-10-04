@@ -1,7 +1,9 @@
 package com.estebanbula.orders;
 
+import com.estebanbula.orders.dynamo.config.OrderTableOps;
 import com.estebanbula.orders.model.Order;
 import com.estebanbula.orders.model.OrderEvent;
+import com.estebanbula.orders.model.SupplierOrder;
 import com.estebanbula.orders.publisher.OrderProducer;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -19,9 +21,10 @@ import java.util.UUID;
 public class OrderController {
 
     private final OrderProducer orderProducer;
+    private final OrderTableOps orderTable;
 
     @PostMapping()
-    public String placeOrder(@RequestBody Order order) throws JsonProcessingException {
+    public String placeOrder(@RequestBody SupplierOrder order) throws JsonProcessingException {
         order.setOrderId(UUID.randomUUID().toString());
         ObjectMapper objectMapper = new ObjectMapper();
 
@@ -30,6 +33,7 @@ public class OrderController {
                 .message("Order is in pending status!")
                 .order(order).build());
 
+        orderTable.putOrders(order);
         return String.format("Event emitted, %s", objectMapper.writeValueAsString(order));
     }
 }

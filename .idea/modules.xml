@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/notifications-ms.main.iml" filepath="$PROJECT_DIR$/.idea/modules/notifications-ms.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/orders-ms.main.iml" filepath="$PROJECT_DIR$/.idea/modules/orders-ms.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/rabbitmq-ms.iml" filepath="$PROJECT_DIR$/.idea/rabbitmq-ms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/stock-ms.main.iml" filepath="$PROJECT_DIR$/.idea/modules/stock-ms.main.iml" />
     </modules>
   </component>
 </project>

@@ -10,3 +10,6 @@ adapters:
     virtualhost: "/"
     queue:
       email: "email.events.general"
+
+aws:
+  region: us-east-1
